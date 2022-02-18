@@ -1,5 +1,9 @@
 # PERN Final Project Template
 
+Front-end: https://jd-final-project.netlify.app/
+
+Back-end: https://jd-final-project-be.herokuapp.com/
+
 - select `use this template`
 - clone this repo
 
