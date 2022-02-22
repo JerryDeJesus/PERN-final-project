@@ -1,12 +1,12 @@
-import SnackEditForm from "../components/SnackEditForm.js";
+// import ShoesEditForm from "../Components/ShoesEditForm.js";
 
-function Edit() {
-    return(
-        <div>
-            <h1>Edit Snack Form</h1>
-            <SnackEditForm />
-        </div>
-    )
-}
+// function Edit() {
+//     return(
+//         <div>
+//             <h1>Edit Shoes Form</h1>
+//             <ShoesEditForm />
+//         </div>
+//     )
+// }
 
-export default Edit;
+// export default Edit;

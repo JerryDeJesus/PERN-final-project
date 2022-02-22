@@ -1,11 +1,11 @@
-import SnackDetails from "../components/SnackDetails.js";
+import ShoesDetails from "../Components/ShoesDetails.js";
 
 function Show() {
     return(
         <div>
-            <h1>Snacks</h1>
-            <div className = "snack-details">
-                <SnackDetails />
+            <h1>Shoes</h1>
+            <div className = "shoes-details">
+                <ShoesDetails />
             </div>
         </div>
     )

@@ -1,10 +1,10 @@
-import SnackNewForm from "../Components/SnackNewForm.js";
+import ShoesNewForm from "../Components/ShoesNewForm.js";
 
 function New() {
     return(
         <div>
-            <h1>Snacks</h1>
-            <SnackNewForm />
+            <h1>Pair of Shoes</h1>
+            <ShoesNewForm />
         </div>
     )
 }
