@@ -1,10 +1,11 @@
+import { useState, useEffect } from "react";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-function ShoesNewForm() {
+function ShoesEditForm() {
+    let {id} = useParams();
     const [shoes, setShoes] = useState({
         name: "",
         description: "",
@@ -20,20 +21,27 @@ function ShoesNewForm() {
         setShoes({...shoes, [e.target.id]: e.target.value})
     };
 
-    const handleSubmit = (e) => {
+    useEffect(() => {
+        axios.get(`${API}/shoes/${id}`)
+             .then(res => setShoes(res.data))
+             .catch(err => console.log(err))
+    }, [id]);
+
+    const handleEdit = (e) => {
         e.preventDefault();
-        axios.post(`${API}/shoes`, shoes)
+        axios.put(`${API}/shoes/${id}`, shoes)
              .then(res => navigate("/shoes"))
              .catch(err => console.log(err))
     };
 
+
     let {name, description, price, rating, featured, image} = shoes;
 
     return(
-        <div id="new-form">
-            <form onSubmit={handleSubmit}>
-                
-            <label htmlFor = "name">Name</label>
+        <div id="edit-form">
+            <form onSubmit={handleEdit}>
+            <br/><br/>
+            <label htmlFor = "name">Shoe Name</label>
                 <input 
                 id = "name" 
                 value = {name} 
@@ -43,7 +51,7 @@ function ShoesNewForm() {
                 required />
 
             
-                <label htmlFor = "description">description</label>
+                <label htmlFor = "description">Description</label>
                 <input 
                 id = "description"
                 value = {description} 
@@ -54,7 +62,7 @@ function ShoesNewForm() {
                 />
             
             
-                <label htmlFor = "price">price</label>
+                <label htmlFor = "price">Price</label>
                 <input 
                 id = "price" 
                 value = {price} 
@@ -65,7 +73,7 @@ function ShoesNewForm() {
                 />
             
 
-                <label htmlFor = "rating">Rating</label>
+                <label htmlFor = "rating">Rating (1-5)</label>
                 <input 
                 id = "rating" 
                 value = {rating} 
@@ -86,7 +94,7 @@ function ShoesNewForm() {
                 placeholder = "http://" 
                 />
 
-                <label htmlFor = "image">Image</label>
+                <label htmlFor = "image">Image Link</label>
                 <input 
                 id = "image" 
                 value = {image} 
@@ -96,9 +104,11 @@ function ShoesNewForm() {
                 />
                 <br/>
                 <button type="submit">Submit</button>
+                <button><Link to = {`/shoes/${id}`}>Back</Link></button>
+                <br/><br/><br/><br/>
             </form>
         </div>
     )
 }
 
-export default ShoesNewForm;
+export default ShoesEditForm;

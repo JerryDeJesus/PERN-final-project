@@ -4,6 +4,7 @@ import Shoes from "./Shoes.js";
 
 function AllShoes() {
     const [shoes, setShoes] = useState([]);
+    const [query, setQuery] = useState("");
     const API = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
@@ -18,8 +19,18 @@ function AllShoes() {
 
     return(
         <div>
+                        <label htmlFor="search-box">Search by item name:</label>
+                            <input
+                                type="search"
+                                id="search-box"
+                                placeholder="Search"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                            />
             <section className="Shoes">
-                {displayShoes}
+                {displayShoes.filter((shoeObj)=>{
+                    return shoeObj.props.shoes.name.toLowerCase().includes(query.toLowerCase());
+                })}
             </section>
         </div>
     )

@@ -22,7 +22,7 @@ const getShoe = async (id) => {
 const createShoe = async (shoe) => {
    try{
       if(!shoe.image || shoe.image === "") {
-         shoe.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+         shoe.image = "https://dummyimage.com/300x300/6e6c6e/e9e9f5.png&text=No+Image";
       }
       const newShoe = await db.one(
          "INSERT INTO shoes (name, description, price, rating, featured, image) VALUES($1, $2, $3 ,$4, $5, $6) RETURNING *;",

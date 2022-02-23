@@ -11,3 +11,145 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Starting here */
+
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Overlock&display=swap');
+
+.shoes-card span {
+  width: 25px;
+}
+
+article aside {
+  margin: 0 125px;
+}
+
+aside h4 {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightblue;
+  border: 1px lightcoral solid;
+  justify-content: space-evenly;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  background-color: lightblue;
+}
+
+article .Shoes {
+  display: grid;
+  width: 300px;
+}
+
+article .showNavigation {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+article .shoes-card, .shoes-details {
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 30px -20px rgba(0,0,0,0.2);
+}
+
+/* STYLING FORMS */
+#new-form, #edit-form {
+  display: flex;
+  justify-content: center;
+  background-color: lightblue;
+  border: 1px solid lightcoral;
+  width:50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+form {
+  display: grid;
+}
+
+input {
+  width: 250px;
+}
+
+body {
+  font-family: "Overlock", cursive;
+}
+
+h1 {
+  font-family: "Carter One", cursive;
+  text-align: center;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+nav {
+  background-color: rgb(37,36,34);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 45px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: lightcoral;
+}
+
+h4 {
+  margin: 0px;
+  font-size: 16px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.Shoes article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.Shoes div {
+  background-color: lightblue;
+  border: 1px lightcoral solid; 
+  width: 150px;
+  padding: 1em;
+  background-color: white;
+}
+
+.Shoes img {
+  width: 150px;
+  border: solid lightcoral 1px;
+}
+
+.Shoes h6, h5 {
+  text-align: center;
+
+}
+
+article .Shoe {
+  width: 1200px;
+  text-align: center;
+}
+
+.Shoe{ 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  height: 25px;
+  width: 258px;
+}

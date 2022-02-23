@@ -26,20 +26,20 @@ function ShoesDetails() {
     return(
         <div className="Shoes">
         <article>
-            <div className="Shoes">
-                <h5>{name}</h5>
+            <div className="Shoe">
+                <h1>{name}</h1>
                 <img src = {image} alt = {name} />
                 <br />
-                <h6>price: {price}</h6>
-                <h6>description: {description}</h6>
-                <h6>featured: {featured}</h6>
-                <h6>rating: {rating}</h6>
+                <h2>Price: ${price}</h2>
+                <h2>Description: {description}</h2>
+                <h2>Featured: {featured ? "Yes" : "No"}</h2>
+                <h2>Rating: {rating}</h2>
             </div>
-            <div className="showNavigation">
+            <span className="showNavigation">
                 <div><Link to = {"/shoes"}><button>Back</button></Link></div>
                 <div><Link to = {`/shoes/${id}/edit`}><button>Edit</button></Link></div>
                 <div><button onClick={handleDelete}>Delete</button></div>
-            </div>
+            </span>
         </article>
         </div>
     )
