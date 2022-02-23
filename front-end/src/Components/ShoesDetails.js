@@ -21,7 +21,7 @@ function ShoesDetails() {
              .catch(err => console.log(err))
     };
 
-    let {name, description, price, rating, featured, image} = shoes;
+    let {name, description, footwear_type, price, rating, featured, image} = shoes;
 
     return(
         <div className="Shoes">
@@ -30,10 +30,11 @@ function ShoesDetails() {
                 <h1>{name}</h1>
                 <img src = {image} alt = {name} />
                 <br />
-                <h2>Price: ${price}</h2>
                 <h2>Description: {description}</h2>
+                <h2>Footwear Type: {footwear_type}</h2>
+                <h2>Price: ${price}</h2>
+                <h2>Rating: {rating}/5</h2>
                 <h2>Featured: {featured ? "Yes" : "No"}</h2>
-                <h2>Rating: {rating}</h2>
             </div>
             <span className="showNavigation">
                 <div><Link to = {"/shoes"}><button>Back</button></Link></div>

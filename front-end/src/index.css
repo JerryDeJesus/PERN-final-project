@@ -49,13 +49,6 @@ article .Shoes {
   width: 300px;
 }
 
-article .showNavigation {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-}
-
 article .shoes-card, .shoes-details {
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 30px -20px rgba(0,0,0,0.2);
 }
@@ -152,4 +145,19 @@ article .Shoe {
 button {
   height: 25px;
   width: 258px;
+}
+
+article .showNavigation {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.showNavigation button {
+  width: 100px;
+}
+
+h3{
+  text-align: center;
 }

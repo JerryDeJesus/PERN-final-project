@@ -9,6 +9,7 @@ function ShoesEditForm() {
     const [shoes, setShoes] = useState({
         name: "",
         description: "",
+        footwear_type: "",
         price: 0,
         rating: 0,
         featured: false,
@@ -35,46 +36,65 @@ function ShoesEditForm() {
     };
 
 
-    let {name, description, price, rating, featured, image} = shoes;
+    let {name, description, footwear_type, price, rating, featured, image} = shoes;
 
     return(
         <div id="edit-form">
             <form onSubmit={handleEdit}>
             <br/><br/>
             <label htmlFor = "name">Shoe Name</label>
-                <input 
+            <input 
                 id = "name" 
                 value = {name} 
                 type = "text" 
                 onChange = {handleText} 
-                placeholder = "Name of the shoes"
-                required />
+                placeholder = ""
+                required 
+            />
 
             
-                <label htmlFor = "description">Description</label>
-                <input 
+            <label htmlFor = "description">Description</label>
+            <input 
                 id = "description"
                 value = {description} 
                 type = "text" 
                 onChange = {handleText} 
-                placeholder = "What kind of footwear?"
+                placeholder = "Brand, colors, etc."
                 required
-                />
+            />
+
+            <label htmlFor = "footwearType" >Footwear Type:</label>
+            <select 
+                name="footwearType" 
+                id="footwearType" 
+                onChange={handleText}
+                value={footwear_type}
+                required 
+            >
+                    <option value="">--Choose an option--</option>
+                    <option value="Sneakers">Sneakers</option>
+                    <option value="Work Boots">Work Boots</option>
+                    <option value="Rain Boots">Rain Boots</option>
+                    <option value="Dress Shoes">Dress Shoes</option>
+                    <option value="Sandals">Sandals</option>
+                    <option value="Slippers">Slippers</option>
+                    <option value="Clogs">Clogs</option>
+                    <option value="Other">Other</option>
+            </select>
             
-            
-                <label htmlFor = "price">Price</label>
-                <input 
+            <label htmlFor = "price">Price</label>
+            <input 
                 id = "price" 
                 value = {price} 
                 type = "number" 
                 onChange = {handleText}
                 min = "1"
                 required 
-                />
+            />
             
 
-                <label htmlFor = "rating">Rating (1-5)</label>
-                <input 
+            <label htmlFor = "rating">Rating (1-5)</label>
+            <input 
                 id = "rating" 
                 value = {rating} 
                 type = "number" 
@@ -83,29 +103,31 @@ function ShoesEditForm() {
                 min = "1"
                 max = "5"
                 required
-                />
+            />
             
-                <label htmlFor = "featured">Favorited?</label>
-                <input 
+            <label htmlFor = "featured">Favorited?</label>
+            <input 
                 id = "featured" 
                 value = {featured} 
                 type = "checkbox" 
                 onChange = {handleText} 
                 placeholder = "http://" 
-                />
+            />
 
-                <label htmlFor = "image">Image Link</label>
-                <input 
+            <label htmlFor = "image">Image Link</label>
+            <input 
                 id = "image" 
                 value = {image} 
                 type = "text" 
                 onChange = {handleText} 
                 placeholder = "http://" 
-                />
-                <br/>
-                <button type="submit">Submit</button>
-                <button><Link to = {`/shoes/${id}`}>Back</Link></button>
-                <br/><br/><br/><br/>
+            />
+
+            <br/>
+            <button type="submit">Submit</button>
+            <button><Link to = {`/shoes/${id}`}>Back</Link></button>
+
+            <br/><br/><br/><br/>
             </form>
         </div>
     )

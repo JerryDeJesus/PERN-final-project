@@ -25,8 +25,8 @@ const createShoe = async (shoe) => {
          shoe.image = "https://dummyimage.com/300x300/6e6c6e/e9e9f5.png&text=No+Image";
       }
       const newShoe = await db.one(
-         "INSERT INTO shoes (name, description, price, rating, featured, image) VALUES($1, $2, $3 ,$4, $5, $6) RETURNING *;",
-         [shoe.name, shoe.description, shoe.price, shoe.rating, shoe.featured, shoe.image]
+         "INSERT INTO shoes (name, description, footwear_type, price, rating, featured, image) VALUES($1, $2, $3 ,$4, $5, $6, $7) RETURNING *;",
+         [shoe.name, shoe.description, shoe.footwear_type, shoe.price, shoe.rating, shoe.featured, shoe.image]
          )
          return newShoe;
    }catch(err){
@@ -48,8 +48,8 @@ const updateShoe = async (id, shoe) => {
       if(!shoe.image || shoe.image === "") {
          shoe.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
       }
-      const updatedShoe = await db.one('UPDATE shoes SET name=$1, description=$2, price=$3, rating=$4, featured=$5, image=$6 WHERE id=$7 RETURNING *;',
-      [shoe.name, shoe.description, shoe.price, shoe.rating, shoe.featured, shoe.image, id])
+      const updatedShoe = await db.one('UPDATE shoes SET name=$1, description=$2, footwear_type=$3, price=$4, rating=$5, featured=$6, image=$7 WHERE id=$8 RETURNING *;',
+      [shoe.name, shoe.description, shoe.footwear_type, shoe.price, shoe.rating, shoe.featured, shoe.image, id])
      return updatedShoe
      }catch(err){
      return err

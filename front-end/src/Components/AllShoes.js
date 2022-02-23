@@ -17,20 +17,22 @@ function AllShoes() {
         return <Shoes key = {index} shoes = {shoe} />
     });
 
+    let filteredShoes = displayShoes.filter((shoeObj)=>{
+        return shoeObj.props.shoes.name.toLowerCase().includes(query.toLowerCase());
+    })
+
     return(
         <div>
-                        <label htmlFor="search-box">Search by item name:</label>
-                            <input
-                                type="search"
-                                id="search-box"
-                                placeholder="Search"
-                                value={query}
-                                onChange={(e) => setQuery(e.target.value)}
-                            />
+            <label htmlFor="search-box">Search by item name:</label>
+            <input
+                type="search"
+                id="search-box"
+                placeholder="Search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+            />
             <section className="Shoes">
-                {displayShoes.filter((shoeObj)=>{
-                    return shoeObj.props.shoes.name.toLowerCase().includes(query.toLowerCase());
-                })}
+                {filteredShoes}
             </section>
         </div>
     )
