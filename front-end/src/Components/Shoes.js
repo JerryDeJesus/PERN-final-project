@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Shoes({shoes}) {
     let {name, description, footwear_type, price, rating, featured, image, id} = shoes;
-    console.log(shoes.footwear_type);
+
     return(
         <article className="Shoes" >
             <Link to = {`/shoes/${id}`}>
