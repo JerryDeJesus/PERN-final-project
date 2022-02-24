@@ -22,6 +22,13 @@ function ShoesEditForm() {
         setShoes({...shoes, [e.target.id]: e.target.value})
     };
 
+    // sadly added after deadline at 4pm...
+    const handleDropdown = (e) => {
+        setShoes({...shoes, footwear_type: e.target.value})
+        console.log(footwear_type)
+    };
+    //ends here
+
     useEffect(() => {
         axios.get(`${API}/shoes/${id}`)
              .then(res => setShoes(res.data))
@@ -67,8 +74,7 @@ function ShoesEditForm() {
             <select 
                 name="footwearType" 
                 id="footwearType" 
-                onChange={handleText}
-                value={footwear_type}
+                onChange={handleDropdown}
                 required 
             >
                     <option value="">--Choose an option--</option>

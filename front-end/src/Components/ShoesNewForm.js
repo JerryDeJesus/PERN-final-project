@@ -21,6 +21,14 @@ function ShoesNewForm() {
         setShoes({...shoes, [e.target.id]: e.target.value})
     };
 
+
+    // sadly added after deadline at 4pm...
+    const handleDropdown = (e) => {
+        setShoes({...shoes, footwear_type: e.target.value})
+        console.log(footwear_type)
+    };
+    // ends here 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post(`${API}/shoes`, shoes)
@@ -59,8 +67,7 @@ function ShoesNewForm() {
             <select 
                 name="footwearType" 
                 id="footwearType" 
-                onChange={handleText} 
-                value={footwear_type}
+                onChange={handleDropdown} 
                 required 
             >
                     <option value="">--Choose an option--</option>

@@ -24,7 +24,6 @@ function AllShoes() {
 
     let filteredShoes = displayShoes.filter((shoeObj)=>{
         if(typeQuery !== ""){
-            console.log(typeQuery);
         return shoeObj.props.shoes.footwear_type.toLowerCase().includes(typeQuery.toLowerCase());
         }else{
         return shoeObj.props.shoes.name.toLowerCase().includes(query.toLowerCase());
